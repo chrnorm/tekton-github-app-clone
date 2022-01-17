@@ -1,6 +1,6 @@
 FROM python:3.8-alpine as build
 RUN apk update && apk upgrade && pip install -U pip && \
-	apk add --update alpine-sdk make gcc python3-dev libffi-dev openssl-dev \
+	apk add --update alpine-sdk make gcc python3-dev libffi-dev openssl-dev git \
 	&& rm -rf /var/cache/apk/*
 RUN pip --no-cache-dir install requests jwcrypto GitPython
 
